@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="photographers website frontend prototype">
+    <title> Home · PHOTOS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="">
+<a class="skip-link" href="#main"> Skip to content</a>
+<header class="site-header">
+    <div class="container navbar">
+        <a class="brand" href="index.html" aria-label="Photos home"><span class="brand-mark" aria-hidden="true"></span>Photos</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+            <a data-nav-auth href="gallery.html">Gallery</a>
+            <a data-nav-auth class="nav-essential" href="upload.html">Upload</a>
+            <a data-nav-auth href="account.html">Account</a>
+            <a data-nav-auth href="admin.html">Admin</a>
+            <span data-nav-auth class="nav-user" href=""><span class="avatar" data-current-initials>?</span><span data-current-username></span></span>
+            <button data-nav-auth data-logout type="button">Logout</button>
+            <a data-nav-guest href="login.html">Login</a>
+            <a data-nav-guest class="nav-essential btn btn--primary" href="register.html">Register</a>
+        </nav>
+    </div>
+</header>
+<main id="main" class="container">
+    <section class="hero" aria-labelledby="hero-title">
+        <div>
+            <p class="eyebrow">Photographers website · 2026/2027</p>
+            <h1 id="hero-title" class="display">Share the frame.</h1>
+            <p class="lede">A clean space for photographers to publish images and descriptions, discover work from the community and access Premium collections after signing in.</p>
+            <div class="hero-actions" data-nav-guest="">
+                <a class="btn btn--primary" href="login.html"></a>
+                <a class="btn btn--secondaty" href="register.html"></a>
+            </div>
+            <div class="hero-actions" data-nav-auth="">
+                <a class="btn btn--primary" href="gallery.html">Open gallery</a>
+                <a class="btn btn--secondary" href="upload.html">Upload a photograph</a>
+            </div>
+        </div>
+        <div class="hero-art" aria-hidden="true"></div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>©<span dat-year></span> Photos · Photographers Website</span>
+        <span>Frontend prototype</span>
+    </div>
+</footer>
+<script src="js/mock-data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
