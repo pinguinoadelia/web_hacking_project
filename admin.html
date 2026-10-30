@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PHOTOS photographers website frontend prototype">
+  <title>Admin · PHOTOS</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html" aria-label="PHOTOS home"><span class="brand-mark" aria-hidden="true"></span>PHOTOS</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a data-nav-auth href="gallery.html">Gallery</a>
+      <a data-nav-auth class="nav-essential" href="upload.html">Upload</a>
+      <a data-nav-auth href="account.html">Account</a>
+      <a data-nav-admin href="admin.html">Admin</a>
+      <span data-nav-auth class="nav-user"><span class="avatar" data-current-initials>?</span><span data-current-username></span></span>
+      <button data-nav-auth data-logout type="button">Logout</button>
+      <a data-nav-guest href="login.html">Login</a>
+      <a data-nav-guest class="nav-essential btn btn--primary" href="register.html">Register</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="page">
+  <div class="container">
+    <div class="page-head"><div><p class="eyebrow">Administration</p><h1>User privileges</h1><p>Enable or revoke Premium status for registered users.</p></div></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>User</th><th>Membership</th><th>Role</th><th>Action</th></tr></thead>
+        <tbody id="users-body"></tbody>
+      </table>
+    </div>
+  </div>
+  <div id="confirm-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="confirm-title" hidden>
+    <div class="modal">
+      <h2 id="confirm-title">Change Premium status?</h2>
+      <p id="confirm-text"></p>
+      <div class="modal-actions"><button id="cancel-action" class="btn btn--secondary" type="button">Cancel</button><button id="confirm-action" class="btn btn--accent" type="button">Confirm</button></div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span data-year></span> PHOTOS · Photographers Website</span>
+  </div>
+</footer>
+<script src="js/mock-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
