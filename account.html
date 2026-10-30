@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LUMINA photographers website frontend prototype">
+  <title>Account · LUMINA</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html" aria-label="Lumina home"><span class="brand-mark" aria-hidden="true"></span>LUMINA</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a data-nav-auth href="gallery.html">Gallery</a>
+      <a data-nav-auth class="nav-essential" href="upload.html">Upload</a>
+      <a data-nav-auth href="account.html">Account</a>
+      <a data-nav-admin href="admin.html">Admin</a>
+      <span data-nav-auth class="nav-user"><span class="avatar" data-current-initials>?</span><span data-current-username></span></span>
+      <button data-nav-auth data-logout type="button">Logout</button>
+      <a data-nav-guest href="login.html">Login</a>
+      <a data-nav-guest class="nav-essential btn btn--primary" href="register.html">Register</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="page">
+  <div class="container">
+    <div class="page-head"><div><p class="eyebrow">Profile & settings</p><h1>Account</h1><p>Your account details and password settings.</p></div></div>
+    <section class="account-grid">
+      <aside class="card profile-card">
+        <span id="profile-initials" class="avatar">?</span>
+        <h2 id="profile-username"></h2>
+        <p>Photographers Website member</p>
+        <div class="stat-list">
+          <div class="stat-row"><span>Membership</span><strong id="profile-membership"></strong></div>
+          <div class="stat-row"><span>Role</span><strong id="profile-role"></strong></div>
+          <div class="stat-row"><span>Uploads</span><strong id="profile-count"></strong></div>
+        </div>
+      </aside>
+      <section class="card settings-card" aria-labelledby="password-title">
+        <p class="eyebrow">Security settings</p>
+        <h2 id="password-title">Change password</h2>
+        <p class="help">The interface is complete; the final operation will be connected to the account module.</p>
+        <div id="change-password-error" class="notice notice--danger" role="alert" hidden></div>
+        <form id="change-password-form" class="form">
+          <div class="form-row"><label for="current-password">Current password</label><input class="input" id="current-password" name="currentPassword" type="password" autocomplete="current-password" required></div>
+          <div class="form-row"><label for="new-password">New password</label><input class="input" id="new-password" name="newPassword" type="password" autocomplete="new-password" required></div>
+          <div class="form-row"><label for="confirm-password">Confirm new password</label><input class="input" id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" required></div>
+          <div><button class="btn btn--primary" type="submit">Update password</button></div>
+        </form>
+      </section>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span data-year></span> LUMINA · Photographers Website</span>
+    <span>Frontend prototype · HTML, CSS & JavaScript</span>
+  </div>
+</footer>
+<script src="js/mock-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/account.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
