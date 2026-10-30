@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PHOTOS photographers website">
+    <title>Error · PHOTOS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+    <div class="container navbar">
+        <a class="brand" href="index.html" aria-label="PHOTOS home"><span class="brand-mark" aria-hidden="true"></span>PHOTOS</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+            <a data-nav-auth href="gallery.html">Gallery</a>
+            <a data-nav-auth class="nav-essential" href="upload.html">Upload</a>
+            <a data-nav-auth href="account.html">Account</a>
+            <a data-nav-admin href="admin.html">Admin</a>
+            <span data-nav-auth class="nav-user"><span class="avatar" data-current-initials>?</span><span data-current-username></span></span>
+            <button data-nav-auth data-logout type="button">Logout</button>
+            <a data-nav-guest href="login.html">Login</a>
+            <a data-nav-guest class="nav-essential btn btn--primary" href="register.html">Register</a>
+        </nav>
+    </div>
+</header>
+<main id="main" class="page">
+    <div class="container error-page">
+        <p id="error-code" class="error-code">404</p>
+        <h1 id="error-title">Page not found</h1>
+        <p id="error-text">The requested page does not exist.</p>
+        <div class="hero-actions" style="justify-content:center"><a class="btn btn--primary" href="gallery.html">Go to gallery</a><a class="btn btn--secondary" href="index.html">Home</a></div>
+    </div>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>© <span data-year></span> PHOTOS · Photographers website</span>
+    </div>
+</footer>
+<script src="js/mock-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/error.js"></script>
+</body>
+</html>
