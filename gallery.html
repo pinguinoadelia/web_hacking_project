@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LUMINA photographers website frontend prototype">
+  <title>Gallery · LUMINA</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html" aria-label="Lumina home"><span class="brand-mark" aria-hidden="true"></span>LUMINA</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a data-nav-auth href="gallery.html">Gallery</a>
+      <a data-nav-auth class="nav-essential" href="upload.html">Upload</a>
+      <a data-nav-auth href="account.html">Account</a>
+      <a data-nav-admin href="admin.html">Admin</a>
+      <span data-nav-auth class="nav-user"><span class="avatar" data-current-initials>?</span><span data-current-username></span></span>
+      <button data-nav-auth data-logout type="button">Logout</button>
+      <a data-nav-guest href="login.html">Login</a>
+      <a data-nav-guest class="nav-essential btn btn--primary" href="register.html">Register</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="page">
+  <div class="container">
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">Community</p>
+        <h1>Gallery</h1>
+        <p>Photographs and stories currently available to your account.</p>
+      </div>
+      <a class="btn btn--accent" href="upload.html">+ Upload photograph</a>
+    </div>
+    <div class="toolbar" aria-label="Gallery tools">
+      <div class="search"><span class="search-icon" aria-hidden="true">⌕</span><input id="gallery-search" class="input" type="search" placeholder="Search photographs or photographers…" aria-label="Search gallery"></div>
+      <div class="chips" aria-label="Filter photographs">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="standard" aria-pressed="false">Standard</button>
+        <button class="chip" data-filter="premium" aria-pressed="false">Premium</button>
+      </div>
+    </div>
+    <div id="gallery-skeleton" class="skeleton-grid" aria-label="Loading gallery"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+    <section id="gallery-grid" class="gallery-grid" aria-live="polite" hidden></section>
+    <section id="gallery-empty" class="empty-state" hidden>
+      <h2>No photographs found</h2>
+      <p>Try another search or publish a new photograph.</p>
+      <a class="btn btn--secondary" href="upload.html">Upload photograph</a>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span data-year></span> LUMINA · Photographers Website</span>
+  </div>
+</footer>
+<script src="js/mock-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>
