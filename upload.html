@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1">
+    <meta name="description" content="PHOTOS photographers website">
+    <title>Upload · PHOTOS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+    <div class="container navbar">
+        <a class="brand" href="index.html" aria-label ="PHOTOS home"><span class="brand-mark" aria-hidden="true"></span>PHOTOS</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+            <a data-nav-auth href="gallery.html">Gallery</a>
+            <a data-nav-auth class="nav-essential" href="upload.html">Upload</a>
+            <a data-nav-auth href="account.html">Account</a>
+            <span data-nav-auth class="nav-user"><span class="avatar" data-current-initials>?</span><span data-current-initials=></span></span>
+            <button data-nav-auth data-logout type="button">Logout</button>
+            <a data-nav-guest href="login.html">Login</a>
+            <a data-nav-guest class="nav-essential btn btn--primary" href="register.html">Register</a>
+        </nav>
+    </div>
+</header>
+<main id="main" class="page">
+    <div class="container">
+        <div class="page-head"><div><p class="eyebrow">Publish</p><h1>Upload photograph</h1><p>Add an image, description and visibility level.</p></div></div>
+        <section class="upload-grid">
+            <div id="dropzone" class="dropzone">
+                <div id="dropzone-placeholder">
+                    <p class="eyebrow">Image file</p>
+                    <h2>Drag & drop an image</h2>
+                    <p class="help">or choose a file from your device</p>
+                    <label class="btn btn--secondary" for="image-file">Browse files</label>
+                </div>
+                <img id="upload-preview" alt="Selected image preview" hidden>
+            </div>
+            <div class="card upload-panel">
+                <div id="upload-error" class="notice notice--danger" role="alert" hidden></div>
+                <form id="upload-form" class="form">
+                    <input id="image-file" class="dropzone-input" type="file" accept="image/*">
+                    <div class="form-row"><label for="title">Title <span class="help">(optional)</span></label><input id="title" name="title" class="input" maxlength="100" placeholder="Give the photograph a title"></div>
+                    <div class="form-row"><label for="description">Description</label><textarea id="description" name="description" class="textarea" maxlength="1000" required placeholder="Tell the story behind the photograph"></textarea><span class="help">Text description</span></div>
+                    <fieldset style="border:0;padding:0;margin:0"><legend style="font-weight:750;margin-bottom:8px">Visibility</legend>
+                        <div class="radio-group">
+                            <label class="radio-card"><input type="radio" name="visibility" value="standard" checked><span><strong>Premium</strong><br><span class="help">Reserved for Premium users.</span></span></label>
+                        </div>
+                    </fieldset>
+                    <button class="btn btn--accent" type="submit">Publish photograph</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>© <span data-year></span> PHOTOS · Photographers Website</span>
+    </div>
+</footer>
+<script src="js/mock-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/upload.js"></script>
+</body>
+</html>
