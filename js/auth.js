@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const newUser = { id: Date.now(), username, password, isPremium: false, isAdmin: false };
             MockDB.users.push(newUser);
+            window.saveMockUsers(); // TEMPORARY: Remove when registration uses PHP/MySQL.
             App.setCurrentUser(newUser);
             location.href = 'gallery.html';
         });
@@ -91,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (next.length < 8) return showFormError(error, 'New password must contain at least 8 characters.');
             if (next !== confirm) return showFormError(error, 'The two new passwords do not match.');
             user.password = next;
+            window.saveMockUsers(); // TEMPORARY: Remove when password changes use PHP/MySQL.
             error.hidden = true;
             changeForm.reset();
             App.showToast('Password updated in the mock.');

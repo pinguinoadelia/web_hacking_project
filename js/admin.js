@@ -57,7 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.addEventListener('click', event => { if (event.target === modal) closeConfirm(); });
     confirmButton.addEventListener('click', () => {
         if (!pendingUser) return;
-        pendingUser.isPremium = !pendingUser.isPremium;
+        pendingUser.isPremium = !pendingUser.isPremium; // TEMPORARY: Remove when Premium status uses PHP/MySQL.
+        window.saveMockUsers(); 
         App.showToast(`Premium status updated for ${pendingUser.username}.`);
         closeConfirm();
         render();

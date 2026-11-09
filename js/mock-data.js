@@ -73,3 +73,27 @@ window.MockDB = {
       }
     ]
 };
+
+/* Temporary Mock Persistence --> remove this block when integrating the PHP/MySQL backend.
+It saves demo users but its purpose is only for testing. */
+
+const MOCK_USERS_KEY = 'photos_mock_users';
+
+try {
+  const savedUsers = JSON.parse(
+    sessionStorage.getItem(MOCK_USERS_KEY) || 'null'
+  );
+
+  if (Array.isArray(savedUsers)) {
+    window.MockDB.users = savedUsers;
+  }
+} catch (error) {
+  sessionStorage.removeItem(MOCK_USERS_KEY);
+}
+
+window.saveMockUsers = function () {
+  sessionStorage.setItem(
+    MOCK_USERS_KEY,
+    JSON.stringify(window.MockDB.users)
+  );
+};
