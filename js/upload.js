@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             uploader: user.username,
             title: form.title.value.trim() || 'Untitled photograph',
             description,
-            premium: form.querySelector('input[name="visibility"]:checked')?.value,
+            premium: form.querySelector('input[name="visibility"]:checked')?.value === 'premium',
             createdAt: new Date().toISOString().slice(0, 10),
             src: objectUrl
         });
