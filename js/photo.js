@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    if(item-premium && !user.isPremium) {
+    if(item.premium && !user.isPremium) {
         location.href = 'error.html?code=403';
         return;
     }

@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const skeleton = document.querySelector('#gallery-skeleton');
     const empty = document.querySelector('#gallery-empty');
     const search = document.querySelector('#gallery-search');
-    const chips = {...document.querySelectorAll('[data-filter]')};
+    const chips = [...document.querySelectorAll('[data-filter]')];
     let activeFilter = 'all';
-    const premiumChip = document.querySelector('[data-filter="premium"');
+    const premiumChip = document.querySelector('[data-filter="premium"]');
     if (premiumChip) premiumChip.hidden = !App.currentUser().isPremium;
 
     function visibleMedia() {

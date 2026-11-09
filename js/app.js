@@ -28,7 +28,7 @@
         let stack = document.querySelector('.toast-stack');
         if (!stack) {
             stack = document.createElement('div');
-            stack.className = 'toast-stick';
+            stack.className = 'toast-stack';
             stack.setAttribute('aria-live', 'polite');
             document.body.appendChild(stack);
         }
@@ -42,11 +42,11 @@
     function renderNavigation() {
         const user = currentUser();
         document.querySelectorAll('[data-nav-auth]').forEach(el => el.hidden = !user);
-        document.querySelectorAll('[data-nav-guest]').forEach(el => el.hidden = !user);
+        document.querySelectorAll('[data-nav-guest]').forEach(el => el.hidden = Boolean(user));
         document.querySelectorAll('[data-nav-admin]').forEach(el => el.hidden = !(user && user.isAdmin));
 
         document.querySelectorAll('[data-current-username]').forEach(el => el.textContent = user?.username || '');
-        document.querySelectorAll('[data-current-initials').forEach(el => el.textContent = initials(user?.username || '?'));
+        document.querySelectorAll('[data-current-initials]').forEach(el => {el.textContent = initials(user?.username || '?');});
     }
 
     function logout() {
@@ -88,7 +88,7 @@
         renderNavigation();
         markCurrentNav();
         document.querySelectorAll('[data-logout]').forEach(btn => btn.addEventListener('click', logout));
-        document.querySelector('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+        document.querySelectorAll('[data-year]').forEach(el => {el.textContent = new Date().getFullYear();});
     });
 
     window.App = { currentUser, setCurrentUser, requireAuth, requireAdmin, showToast, formatDate, escapeText, initials};

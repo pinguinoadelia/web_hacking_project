@@ -40,9 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const confirm = registerForm.confirmPassword.value;
             const error = document.querySelector('#register-error');
 
-            if (username.length < 8) return ShowFormError(error, 'Username must contain at least 8 characters.');
-            if(MockDB.users.some(user => user.username.toLowerCase() === username.toLowerCase())) return ShowFormError(error, 'This username is already in use.');
-            if(password !== confirm) return ShowFormError(error, 'The two passwords do not match.');
+            if (username.length < 8) return showFormError(error, 'Username must contain at least 8 characters.');
+            if(MockDB.users.some(user => user.username.toLowerCase() === username.toLowerCase())) return showFormError(error, 'This username is already in use.');
+            if(password.length < 8) return showFormError(error, 'Password must contain at least 8 characters.');
+            if(password !== confirm) return showFormError(error, 'The two passwords do not match.');
 
             const newUser = { id: Date.now(), username, password, isPremium: false, isAdmin: false };
             MockDB.users.push(newUser);
@@ -70,10 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const confirm = resetForm.confirmPassword.value;
             const error = document.querySelector('#reset-error');
             if (pass.length < 8) return showFormError(error, 'Password must contain at least 8 characters.');
-            if (pass.length !== confirm) return showFormError(error, 'The two passwords do not match.');
+            if (pass !== confirm) return showFormError(error, 'The two passwords do not match.');
             error.hidden = true;
             document.querySelector('#reset-success').hidden = false;
-            resetForm.querySelector('button[type="submit"]').disables = true;
+            resetForm.querySelector('button[type="submit"]').disabled = true;
         });
     }
 

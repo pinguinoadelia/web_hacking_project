@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale = 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="PHOTOS photographers website">
     <title>Upload · PHOTOS</title>
     <link rel="stylesheet" href="css/styles.css">
@@ -16,7 +16,8 @@
             <a data-nav-auth href="gallery.html">Gallery</a>
             <a data-nav-auth class="nav-essential" href="upload.html">Upload</a>
             <a data-nav-auth href="account.html">Account</a>
-            <span data-nav-auth class="nav-user"><span class="avatar" data-current-initials>?</span><span data-current-initials=></span></span>
+            <a data-nav-admin href="admin.html">Admin</a>
+            <span data-nav-auth class="nav-user"><span class="avatar" data-current-initials>?</span><span data-current-username></span></span>
             <button data-nav-auth data-logout type="button">Logout</button>
             <a data-nav-guest href="login.html">Login</a>
             <a data-nav-guest class="nav-essential btn btn--primary" href="register.html">Register</a>
@@ -44,7 +45,8 @@
                     <div class="form-row"><label for="description">Description</label><textarea id="description" name="description" class="textarea" maxlength="1000" required placeholder="Tell the story behind the photograph"></textarea><span class="help">Text description</span></div>
                     <fieldset style="border:0;padding:0;margin:0"><legend style="font-weight:750;margin-bottom:8px">Visibility</legend>
                         <div class="radio-group">
-                            <label class="radio-card"><input type="radio" name="visibility" value="standard" checked><span><strong>Premium</strong><br><span class="help">Reserved for Premium users.</span></span></label>
+                            <label class="radio-card"><input type="radio" name="visibility" value="standard" checked><span><strong>Standard</strong><br><span class="help">Available to all signed-in users.</span></span></label>
+                            <label class="radio-card"><input type="radio" name="visibility" value="premium"><span><strong>Premium</strong><br><span class="help">Reserved for premium users.</span></span></label>
                         </div>
                     </fieldset>
                     <button class="btn btn--accent" type="submit">Publish photograph</button>

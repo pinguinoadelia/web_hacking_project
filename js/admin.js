@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if (!App.requiredAuth()) return;
+    if (!App.requireAdmin()) return;
     const tbody = document.querySelector('#users-body');
     const modal = document.querySelector('#confirm-modal');
     const modalText = document.querySelector('#confirm-text');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function render() {
         tbody.innerHTML = '';
-        MockDB.users.array.forEach(user => {
+        MockDB.users.forEach(user => {
             const tr = document.createElement('tr');
             const userTd = document.createElement('td');
             const userCell = document.createElement('div');

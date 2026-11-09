@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const messages = {
         '403': ['403', 'Access denied', 'You do not have permission to open this page or resource.'],
         '404': ['404', 'Page not found', 'The page or photograph you requested does not exist.'],
-        '500': ['500', 'Something went wrong', 'An unexpected error occured. Please try again']
+        '500': ['500', 'Something went wrong', 'An unexpected error occurred. Please try again.']
     };
     const [number, title, text] = messages[code] || messages['404'];
     document.querySelector('#error-code').textContent = number;
